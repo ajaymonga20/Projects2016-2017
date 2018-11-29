@@ -1,6 +1,6 @@
 #!/usr/bin/python
 import pygame
-from gi.repository import Gtk
+#from gi.repository import Gtk
 
 class ExamGame:
 
@@ -19,8 +19,8 @@ class ExamGame:
         screen = pygame.display.get_surface()
 
         while running:
-            while Gtk.events_pending():
-                Gtk.main_iteration()
+           # while Gtk.events_pending():
+                #Gtk.main_iteration()
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -30,6 +30,8 @@ class ExamGame:
                 elif event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_LEFT:
                         self.x -= 5
+
+
 
             pygame.draw.circle(screen, (255, 0, 0), (self.x, self.y), 30)
             pygame.display.flip()
